@@ -1,3 +1,8 @@
-.App {
-    background: red;
-}
+// Globals 🌍🌎🌏
+@import '../sass/global/global';
+@import '../sass/global/variables';
+
+
+// Components 🤖
+@import '../sass/components/head.scss';
+@import '../sass/components/body.scss';
