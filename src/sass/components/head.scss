@@ -36,6 +36,16 @@
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         color: #fff;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.7s ease-in;
+        }
+
+        &:active {
+            transform: scale(.95);
+            transition: 0.7s ease-in;
+        }
     }
 
     .card {
