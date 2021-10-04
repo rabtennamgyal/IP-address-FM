@@ -1,17 +1,38 @@
 import React, {useState} from 'react'
 
-function Head() {
+function Head({setlat, setlng}) {
     const key = 'at_thlcm3xUn3yX6VJEmvJnNMKnNPc4B'
     const [value, setvalue] = useState('')
-    const [IPdata, SetIPData] = useState({});
     let regex = /\d/
+    // All the variables below will be assigned values from the JSON
+    let ip, city, region, timezone, code, isp, lat, lng
+
 
     async function getIp() {
         const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${key}&ipAddress=${value}`);
-        const data = await response.json();
-        console.log(data)
-        console.log(IPdata)
-        SetIPData(data)
+        const data = await response.json().then(data => {
+            ip = data.ip
+            city = data.location.city
+            region = data.location.region
+            timezone = data.location.timezone
+            code = data.location.postalCode
+            isp = data.isp
+            lat = data.location.lat
+            lng = data.location.lng
+
+            let one = document.getElementById('one')
+            one.innerText = ip
+            let two = document.getElementById('two')
+            two.innerText = `${city}, ${region} ${code}`
+            let three = document.getElementById('three')
+            three.innerText = `UTC ${timezone}`
+            let four = document.getElementById('four')
+            four.innerText = `${isp}`
+
+            // // 
+            setlat(lat)
+            setlng(lng)
+        })
     }
 
     function logg(e) {
@@ -20,6 +41,7 @@ function Head() {
 
         if (arr.length === 0) {
             console.log('Not a valid IP Address')
+            setvalue('')
         } else {
             getIp()
             setvalue('')
@@ -44,33 +66,45 @@ function Head() {
                     <h3>
                         IP ADDRESS
                     </h3>
-                    <p>
 
-                    </p>
+                    <div className='box'>
+                        <p id='one'>
+    
+                        </p>
+                    </div>
                 </div>
                 <div className='content'>
                     <h3>
                         LOCATION
                     </h3>
-                    <p>
 
-                    </p>
+                    <div className='box'>
+                        <p id='two'>
+                            
+                        </p>
+                    </div>
                 </div>
                 <div className='content'>
                     <h3>
                         TIMEZONE
                     </h3>
-                    <p>
-                        UTC-05:00
-                    </p>
+
+                    <div className='box'>
+                        <p id='three'>
+    
+                        </p>
+                    </div>
                 </div>
                 <div className='content'>
                     <h3>
                         ISP
                     </h3>
-                    <p>
-                        SpaceX, Starlink
-                    </p>
+                    
+                    <div className='box'>
+                        <p id='four'>
+    
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
