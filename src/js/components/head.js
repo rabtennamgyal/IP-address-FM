@@ -29,10 +29,10 @@ function Head({setlat, setlng}) {
             let four = document.getElementById('four')
             four.innerText = `${isp}`
 
-            // // 
             setlat(lat)
             setlng(lng)
         })
+        console.log(data)
     }
 
     function logg(e) {

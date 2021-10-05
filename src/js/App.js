@@ -1,15 +1,16 @@
 import Head from '../js/components/head';
 import Body from '../js/components/body';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function App() {
-  const [lat, setlat] = useState([])
-  const [lng, setlng] = useState([])
+  const [lat = 0, setlat] = useState([])
+  const [lng = 0, setlng] = useState([])
+  const positon = [lat, lng]
 
   return (
     <div className="App">
       <Head setlat={setlat} setlng={setlng} />
-      <Body lat={lat} lng={lng} />
+      <Body positon={positon} />
     </div>
   );
 }
