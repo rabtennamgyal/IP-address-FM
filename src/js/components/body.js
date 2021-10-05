@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer } from 'react-leaflet'
 
-function Body(position) {
+function Body({position}) {
     return (
         <MapContainer center={position} className='body' zoom={14} scrollWheelZoom={false}>
             <TileLayer
