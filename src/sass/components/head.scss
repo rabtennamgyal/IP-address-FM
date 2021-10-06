@@ -1,7 +1,7 @@
 .head {
     position: relative;
     //height: 19rem;
-    height: 23rem;
+    height: 28rem;
     background-image: url('../../images/back.png');
     background-size: cover;
     display: flex;
@@ -12,15 +12,17 @@
         font-family: Rubik, sans-serif;
         color: #fff;
         font-size: 2.8rem;
-        margin: 1.7rem 0;
+        // margin: 1.7rem 0;
+        margin-top: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     input {
         position: relative;
         border: none;
         outline: none;
-        height: 4rem;
-        width: 40rem;
+        height: 6rem;
+        width: 50rem;
         border-radius: 15px;
         font-size: 1.7rem;
     }
@@ -30,7 +32,7 @@
         background: #000;
         border: none;
         outline: none;
-        height: 4rem;
+        height: 6rem;
         width: 3.8rem;
         margin-left: -3.4rem;
         position: absolute;
@@ -55,9 +57,9 @@
         border-radius: 15px;
         position: absolute;
         background: #fff;
-        height: 11rem;
+        height: 13rem;
         width: 78%;
-        margin-top: 16.5rem;
+        margin-top: 21rem;
         z-index: 100;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
