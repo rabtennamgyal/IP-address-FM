@@ -70,7 +70,7 @@ function Head({setlat, setlng}) {
 
                     <div className='box'>
                         <p id='one'>
-    
+                            
                         </p>
                     </div>
                 </div>
