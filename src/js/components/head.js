@@ -58,7 +58,7 @@ function Head({setlat, setlng}) {
             <form>
                 <input value={value} onInput={e => setvalue(e.target.value)} id='ipInput' placeholder='  Search for any IP address or domain' />
                 <button onClick={logg}>
-                    &rarr;
+                    <i className="fas fa-angle-right"></i>
                 </button>
             </form>
 

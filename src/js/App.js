@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet'
 
 function App() {
-  const [lat, setlat] = useState(33)
-  const [lng, setlng] = useState(40)
+  const [lat, setlat] = useState(32.2190)
+  const [lng, setlng] = useState(76.3234)
   let position = [lat, lng]
 
   function NewMap() {
