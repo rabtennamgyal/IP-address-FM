@@ -32,8 +32,9 @@ function Head({setlat, setlng}) {
 
             setlat(lat)
             setlng(lng)
+        }).catch(err => {
+            throw new Error(err)
         })
-        console.log(data)
     }
 
     function logg(e) {
