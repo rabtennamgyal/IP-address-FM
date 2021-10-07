@@ -3,38 +3,63 @@ import React, {useState} from 'react'
 
 function Head({setlat, setlng}) {
     const key = 'at_thlcm3xUn3yX6VJEmvJnNMKnNPc4B'
-    const [value, setvalue] = useState('1.1.1.1')
+    const [value, setvalue] = useState()
     let regex = /\d/
     // All the variables below will be assigned values from the JSON
     let ip, city, region, timezone, code, isp, lat, lng
 
 
     async function getIp() {
-        const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${key}&ipAddress=${value}`);
-        const data = await response.json().then(data => {
-            ip = data.ip
-            city = data.location.city
-            region = data.location.region
-            timezone = data.location.timezone
-            code = data.location.postalCode
-            isp = data.isp
-            lat = data.location.lat
-            lng = data.location.lng
+        const response = await fetch(`https://geo.ipify.org/api/v1?apiKey=${key}&ipAddress=${value}`).then(response => 
+            response.json().then(response => {
+                ip = response.ip
+                city = response.location.city
+                region = response.location.region
+                timezone = response.location.timezone
+                code = response.location.postalCode
+                isp = response.isp
+                lat = response.location.lat
+                lng = response.location.lng
 
-            let one = document.getElementById('one')
-            one.innerText = ip
-            let two = document.getElementById('two')
-            two.innerText = `${city}, ${region} ${code}`
-            let three = document.getElementById('three')
-            three.innerText = `UTC ${timezone}`
-            let four = document.getElementById('four')
-            four.innerText = `${isp}`
+                let one = document.getElementById('one')
+                one.innerText = ip
+                let two = document.getElementById('two')
+                two.innerText = `${city}, ${region} ${code}`
+                let three = document.getElementById('three')
+                three.innerText = `UTC ${timezone}`
+                let four = document.getElementById('four')
+                four.innerText = `${isp}`
 
-            setlat(lat)
-            setlng(lng)
-        }).catch(err => {
-            throw new Error(err)
-        })
+                setlat(lat)
+                setlng(lng)
+            }).catch(err => {
+                throw new Error(err)
+            })
+        )
+        // const response = await response.json().then(response => {
+        //     ip = response.ip
+        //     city = response.location.city
+        //     region = response.location.region
+        //     timezone = response.location.timezone
+        //     code = response.location.postalCode
+        //     isp = response.isp
+        //     lat = response.location.lat
+        //     lng = response.location.lng
+
+        //     let one = document.getElementById('one')
+        //     one.innerText = ip
+        //     let two = document.getElementById('two')
+        //     two.innerText = `${city}, ${region} ${code}`
+        //     let three = document.getElementById('three')
+        //     three.innerText = `UTC ${timezone}`
+        //     let four = document.getElementById('four')
+        //     four.innerText = `${isp}`
+
+        //     setlat(lat)
+        //     setlng(lng)
+        // }).catch(err => {
+        //     throw new Error(err)
+        // })
     }
 
     function logg(e) {
