@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 
 function Head({setlat, setlng}) {
     const key = 'at_thlcm3xUn3yX6VJEmvJnNMKnNPc4B'
-    const [value, setvalue] = useState('')
+    const [value, setvalue] = useState('1.1.1.1')
     let regex = /\d/
     // All the variables below will be assigned values from the JSON
     let ip, city, region, timezone, code, isp, lat, lng
